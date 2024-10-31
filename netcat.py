@@ -47,5 +47,6 @@ if __name__ == '__main__':
 
 
     class NetCat:
-        test
+        def __init__(self,args,buffer=None):
+            self.args=args
 
