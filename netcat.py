@@ -36,3 +36,15 @@ if __name__ == '__main__':
                         default=5555, help='specified port')
     parser.add_argument(
         '-t', '--target', default='192.168.1.203', help='specified IP')
+    parser.add_argument('-u','--upload', help='upload file')
+    args=parser.parse_args()
+    if args.listen:
+        buffer=''
+    else:
+        buffer=sys.stdin.read()
+        nc=NetCat(args,buffer.encode('utf-8'))
+        nc.run()
+
+
+    class NetCat:
+        
